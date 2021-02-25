@@ -1,27 +1,17 @@
-import logo from './logo.svg';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
 import './App.css';
-import consola from 'consola'
+import { data } from './utils/data.js';
 
-function App() {
-  const today = new Date()
-  console.log(today);
+const { logo, alt, cover, title, description, company } = data;
 
-  const date = today.getFullYear()
-
-  console.log(date);
-
-  const onCLick = function () {
-    consola.success('Hello')
-  }
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={onCLick}>Hello</button>
-      <footer>{date}</footer>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+	<>
+		<Header src={logo} alt={alt} />
+		<Main src={cover} alt={alt} title={title} description={description} />
+		<Footer company={company} />
+	</>
+);
 
 export default App;

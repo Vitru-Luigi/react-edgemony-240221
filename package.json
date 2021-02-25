@@ -10,7 +10,6 @@
 		"react-dom": "^17.0.1",
 		"react-scripts": "4.0.3",
 		"serve": "^11.3.2",
-		"source-map-explorer": "^2.5.2",
 		"web-vitals": "^1.1.0"
 	},
 	"scripts": {
@@ -40,6 +39,7 @@
 		]
 	},
 	"devDependencies": {
-		"consola": "^2.15.3"
+		"consola": "^2.15.3",
+		"source-map-explorer": "^2.5.2"
 	}
 }
