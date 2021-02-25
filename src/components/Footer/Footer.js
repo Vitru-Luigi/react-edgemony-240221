@@ -5,7 +5,9 @@ export default function Footer(props) {
 	const { company } = props;
 	return (
 		<footer>
-			{date} &copy; {company}
+			<nav>
+				{date} &copy; {company}
+			</nav>
 		</footer>
 	);
 }
