@@ -1,25 +1,51 @@
 import { Component } from 'react';
 import './Body.scss';
 import PropTypes from 'prop-types';
+import Products from '../Products/Products';
 
 class Body extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			showProducts: false,
+		};
+	}
+
+	makeProductsVisible() {
+		this.setState({ showProducts: true });
+	}
+
 	render() {
-		const { src, alt, title, description } = this.props;
+		const { cover, title, description, products } = this.props;
+		const { showProducts } = this.state;
+
 		return (
 			<main className='Body'>
-				<img src={src} alt={alt} />
-				<h1>{title}</h1>
-				<h2>{description}</h2>
+				<img src={cover} alt={title} />
+				<div className='content'>
+					<h1>{title}</h1>
+					<h2>{description}</h2>
+					<div className='products-container'>
+						{showProducts ? (
+							<Products products={products} />
+						) : (
+							// (products.map((product) => {return <li>{product.title}</li>}))
+
+							<button onClick={() => this.makeProductsVisible()}>Show products</button>
+						)}
+					</div>
+				</div>
 			</main>
 		);
 	}
 }
 
-export default Body;
-
 Body.propTypes = {
-	src: PropTypes.string.isRequired,
+	cover: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	description: PropTypes.string.isRequired,
-	alt: PropTypes.string,
+	products: PropTypes.array.isRequired,
 };
+
+export default Body;

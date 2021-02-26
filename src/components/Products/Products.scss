@@ -1,0 +1,25 @@
+.Products {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	li {
+		min-width: 200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		max-width: 150px;
+		min-height: 300px;
+		padding: 0.25rem;
+	}
+	h3 {
+		text-align: center;
+		font-weight: 900;
+		padding: 0.25rem;
+	}
+	img {
+		max-height: 120px;
+		padding: 0.25rem;
+	}
+}

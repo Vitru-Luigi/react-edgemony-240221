@@ -4,12 +4,13 @@ import Body from './components/Body/Body';
 import './App.scss';
 import { data } from './utils/data.js';
 
-const { logo, alt, cover, title, description, company, name } = data;
+const { logo, alt, cover, title, description, company, name, products } = data;
+console.log(products);
 
 const App = () => (
 	<div className='App'>
 		<Header src={logo} alt={alt} name={name} />
-		<Body src={cover} alt={alt} title={title} description={description} />
+		<Body cover={cover} alt={alt} title={title} description={description} products={products} />
 		<Footer company={company} />
 	</div>
 );
