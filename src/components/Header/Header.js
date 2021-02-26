@@ -1,14 +1,12 @@
 import './Header.scss';
 import PropTypes from 'prop-types';
 
-const Header = ({ src, alt, name }) => {
-	return (
-		<header className='Header'>
-			<img src={src} alt={alt} />
-			<span>{name}</span>
-		</header>
-	);
-};
+const Header = ({ src, alt, name }) => (
+	<header className='Header'>
+		<img src={src} alt={alt} />
+		<span>{name}</span>
+	</header>
+);
 
 Header.propTypes = {
 	src: PropTypes.string.isRequired,
