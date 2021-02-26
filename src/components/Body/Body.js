@@ -13,12 +13,13 @@ class Body extends Component {
 	}
 
 	makeProductsVisible() {
-		this.setState({ showProducts: true });
+		this.setState({ showProducts: !this.state.showProducts });
 	}
 
 	render() {
 		const { cover, title, description, products } = this.props;
 		const { showProducts } = this.state;
+		console.log(this.state.showProducts);
 
 		return (
 			<main className='Body'>
@@ -26,15 +27,8 @@ class Body extends Component {
 				<div className='content'>
 					<h1>{title}</h1>
 					<h2>{description}</h2>
-					<div className='products-container'>
-						{showProducts ? (
-							<Products products={products} />
-						) : (
-							// (products.map((product) => {return <li>{product.title}</li>}))
-
-							<button onClick={() => this.makeProductsVisible()}>Show products</button>
-						)}
-					</div>
+					<button onClick={() => this.makeProductsVisible()}>Show products</button>
+					<div className='products-container'>{showProducts && <Products products={products} />}</div>
 				</div>
 			</main>
 		);

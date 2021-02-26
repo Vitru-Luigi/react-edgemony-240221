@@ -5,7 +5,6 @@ import './App.scss';
 import { data } from './utils/data.js';
 
 const { logo, alt, cover, title, description, company, name, products } = data;
-console.log(products);
 
 const App = () => (
 	<div className='App'>
