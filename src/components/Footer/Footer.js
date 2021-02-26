@@ -1,13 +1,19 @@
+import './Footer.scss';
+import PropTypes from 'prop-types';
 import date from '../../utils/getYear';
-import './Footer.css';
 
-export default function Footer(props) {
-	const { company } = props;
+const Footer = ({ company }) => {
 	return (
-		<footer>
+		<footer className='Footer'>
 			<nav>
 				{date} &copy; {company}
 			</nav>
 		</footer>
 	);
-}
+};
+
+Footer.propTypes = {
+	company: PropTypes.string.isRequired,
+};
+
+export default Footer;

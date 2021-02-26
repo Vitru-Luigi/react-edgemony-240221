@@ -1,11 +1,19 @@
-import './Header.css';
+import './Header.scss';
+import PropTypes from 'prop-types';
 
-export default function Header(props) {
-	const { src, alt, name } = props;
+const Header = ({ src, alt, name }) => {
 	return (
-		<header>
+		<header className='Header'>
 			<img src={src} alt={alt} />
 			<span>{name}</span>
 		</header>
 	);
-}
+};
+
+Header.propTypes = {
+	src: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	alt: PropTypes.string,
+};
+
+export default Header;
