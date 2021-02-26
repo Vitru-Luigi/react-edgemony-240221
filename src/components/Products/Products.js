@@ -1,4 +1,5 @@
 import './Products.scss';
+import PropTypes from 'prop-types';
 const Products = ({ products }) => {
 	console.log(products);
 	return (
@@ -13,6 +14,10 @@ const Products = ({ products }) => {
 			))}
 		</ul>
 	);
+};
+
+Products.propTypes = {
+	products: PropTypes.array.isRequired,
 };
 
 export default Products;
